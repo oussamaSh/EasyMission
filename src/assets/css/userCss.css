@@ -1,0 +1,72 @@
+﻿body .header-strickyy{
+    margin: auto;
+    position: relative;
+    width: 1430px;
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.header-strickyy form{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.header-strickyy form .form-group i.icon {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    color: #fff;
+}
+
+.header-strickyy form input{
+    background-color: rgb(1, 117, 131);
+    min-width: 227px;
+    color: #fff;
+    height: 35px;
+    border-radius: 13px;
+    font-size: 14px;
+    padding-left: 30px;
+}
+
+
+
+/*  ---------------------------- Liste Candidates -----------------------*/
+
+.candidates{
+    padding-top: 240px;
+    width: 800px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.candidates button{
+    background: #056e7b;
+    min-width: 92%;
+    margin-top: 51px;
+}
+
+.candidates img{
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+.candidates .candidate-name{
+    font-size: 24px;
+    font-family: monospace;
+
+}
+
+.candidates hr{
+    width: 100%;
+}
+
+.candidates-banner{
+    margin-top: -1%;
+}
+
+
+.user_connected_name {
+    font-size: 20px;
+    font-family: cursive;
+    margin-right: 10px;
+}

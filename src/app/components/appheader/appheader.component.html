@@ -1,0 +1,130 @@
+<div class="header-strickyy">
+  
+              <div class="row">
+                  <div class="col-md-1">
+                      <div class="site-logo">
+                          <a href=""><img src="assets/images/EMlogo.png" alt="" style="max-width: 52%;" class="img-responsive" /></a>
+                          
+                      </div>
+                  </div>
+                  <div class="col-md-1" style="padding-top: 15px;">
+                        <span style="margin-left: -62px;font-size: 22px;font-family: cursive;">Easy Mission</span>
+  
+                  </div>
+                  <form class="navbar-form hidden-sm col-md-2">
+                      <div class="form-group">
+                          <i class="icon ion-android-search"></i>
+                          <input type="text" class="form-control" placeholder="Search candidates">
+                      </div>
+                  </form>
+                  <div class="col-md-5">
+                      <nav class="navbar navbar-default navbar-static-top">
+                          <div class="navbar-header">
+                              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                  <span class="sr-only">Toggle navigation</span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                              </button>
+                          </div>
+                          <div id="navbar" class="navbar-collapse collapse">
+                              <ul class="nav navbar-nav scrollto">
+                                  <li><a href="">Home</a></li>
+                                  <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rayen <i class="fa fa-angle-down"></i></a>
+                                      <ul class="dropdown-menu">
+                                          <li><a href="manage_application.html">Manage Applications</a></li>
+                                          <li><a href="manage_job.html">Manage jobs</a></li>
+                                          <li><a href="job_listing.html">Job Listing</a></li>
+                                          <li><a href="job.html">Job Page</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rhouma <i class="fa fa-angle-down"></i></a>
+                                      <ul class="dropdown-menu">
+                                          <li><a href="employe_detail.html">All events</a></li>
+                                          <li><a href="employe_list.html">My events</a></li>
+                                          <li><a href="post.html">All media</a></li>
+                                          <li><a href="post.html">My media</a></li>
+                                      </ul>
+                                  </li>                                
+                                    <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Balha <i class="fa fa-angle-down"></i></a>
+                                      <ul class="dropdown-menu">
+                                          <li><a href="employe_detail.html">All events</a></li>
+                                          <li><a href="employe_list.html">My events</a></li>
+                                          <li><a href="post.html">All media</a></li>
+                                          <li><a href="post.html">My media</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oussama <i class="fa fa-angle-down"></i></a>
+                                      <ul class="dropdown-menu">
+                                          <li><a href="">Browse Candidates</a></li>
+                                          <li><a href="">Browse Candidates</a></li>
+                                          <li><a href="resume.html">Submit Resume</a></li>
+                                      </ul>
+                                  </li>
+                              <!--    @if (@HttpContext.Current.Session["username"] != null)
+                                  {-->
+                                      <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Yesmine<i class="fa fa-angle-down"></i></a>
+                                          <ul class="dropdown-menu">
+                                              <li><a href="">Friend requests sent</a></li>
+                                              <li><a href="">Friend requests received</a></li>
+                                              <li><a href="" >Friends list</a></li>
+                                          </ul>
+                                      </li>
+                                <!--  }-->
+                                 
+                              </ul>
+                          </div>
+                      </nav>
+                  </div>
+                  <div class="col-md-3 text-right">
+                  <!--    @if (@HttpContext.Current.Session["username"]==null)
+                      {-->
+                          <a routerLink="login" class="login active">Login</a>
+                          <a routerLink="register" class="signup">Sign Up</a>
+                    <!--  }
+                      else
+                      {
+                          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                              <div class="row" style="margin-left: 70px;">
+                                  <div class="col-md-3" style="height: 53px; padding-right: 0;">
+                                      <img src="../../Content/Upload/@HttpContext.Current.Session["picture"]" alt="user" class="profile-photo-lg" style="width: 89%;border-radius: 50%;height: 50px;">
+                                  </div>
+                                  <div class="col-md-8" style="text-align: left;padding-top: 11px;padding-left: 0;">
+                                      <span class="user_connected_name">@HttpContext.Current.Session["firstname"] @HttpContext.Current.Session["lastname"]</span>
+                                  </div>
+                              </div>
+                              
+                              
+                          </a>
+                                  <ul class="dropdown-menu" style="top: 109%;left: 86px;width: 72%;">
+                                      <li class="header" style="text-align: center;">
+                                         <img src=""" alt="user" class="profile-photo-lg" style="width: 23%; height: 50px; border-radius: 50%; margin-left: 100px;">
+                                          <div class="user">
+                                              @HttpContext.Current.Session["firstname"] @HttpContext.Current.Session["lastname"]
+                                              <div class="title">@HttpContext.Current.Session["role"]</div>
+                                          </div> 
+                                      </li>
+  
+                                      <li class="footer" >
+                                          <div class="row clearfix">
+  
+                                              <a href="" class="btn btn-default btn-sm btn-block" style="width: 100%;max-width: 55%;margin: auto; border-radius: 30px;">Log Out</a>
+  
+                                          </div>
+                                      </li>
+                                  </ul>
+                        
+                      }-->
+  
+                  </div>
+              </div>
+        
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
