@@ -1,3 +1,4 @@
+import { EntrepriseService } from './service/entrepriseService/entreprise.service';
 import { FreelanceService } from './service/freelanceService/freelance.service';
 import { UserService } from './service/userService/user.service';
 import { PlaceService } from './service/eventService/place.service';
@@ -19,6 +20,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routes } from './app.router';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { MediaComponent } from './components/media/media.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,14 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     ArticleComponent,
     FreelanceComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MediaComponent
 
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,routes
   ],
-  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService],
+  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService,EntrepriseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,29 @@
+<nav >  
+    <button type="button" (click)="changeCategoryView('')" >All</button>
+    <button type="button" (click)="changeCategoryView('video')" >Images</button>
+    <button type="button" (click)="changeCategoryView('image')" >Videos</button>
+  </nav>
+   
+  
+  <div *ngFor="let m of listeMedia | mediaTypePipe:categoryView" >
+    <p>id:{{m.id}}</p> 
+    <p>path: {{m.path}}</p>
+  </div>
+  
+  <!-- upload Media -->
+      <div class="form-group">
+      <label for="typeMedia">Media Type</label>
+      <select  #typeMedia="ngModel" ngModel class="form-control" id="path" placeholder="conference,opening...">
+          <option value="" selected disabled hidden>Choose here(image/video/sound...)</option>
+          <option value="image" >Image (jpg,jpeg,png...)</option>
+        <option value="video">video(mp4,amv,wmv...)</option>
+        
+      </select>
+    </div>
+      <div class="form-group">
+      <label for="path">Path</label>
+      <input type="text" #path="ngModel" ngModel class="form-control" id="path" placeholder="file path ">
+    <button name="uploadMedia"  type="button" (click)="uploadMedia(typeMedia.value,path.value)" >Upload Media</button>
+    
+  </div>
+  
