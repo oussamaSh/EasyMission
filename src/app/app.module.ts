@@ -21,6 +21,7 @@ import { NgModule } from '@angular/core';
 import { routes } from './app.router';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { MediaComponent } from './components/media/media.component';
+import { EntrepriseAffichComponent } from './components/entreprise-affich/entreprise-affich.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MediaComponent } from './components/media/media.component';
     FreelanceComponent,
     LoginComponent,
     RegisterComponent,
-    MediaComponent
+    MediaComponent,
+    EntrepriseAffichComponent
 
   ],
   imports: [
