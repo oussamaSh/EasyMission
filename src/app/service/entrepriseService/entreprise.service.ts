@@ -17,4 +17,8 @@ export class EntrepriseService {
 
     return this.http.post(this.url, entreprise).map(resp => resp.json());
   }
+
+  deleteEntreprise(entreprise) {
+    return this.http.delete(this.url + '/' + entreprise.id).map(resp => resp.json());
+  }
 }

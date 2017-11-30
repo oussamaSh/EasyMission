@@ -42,4 +42,16 @@ export class EntrepriseComponent implements OnInit {
    })
 
   }
+
+  deleteEntreprise(entreprise)
+   {
+    this.service.deleteEntreprise(entreprise)
+    .subscribe(deletedPost=>{
+      console.log(deletedPost);
+      let index=this.entreprises.indexOf(entreprise);
+      this.entreprises.splice(index,1);
+    })
+
+   }
+
 }
