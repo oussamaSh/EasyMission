@@ -1,3 +1,5 @@
+import { RegisterComponent } from './components/user-components/register/register.component';
+import { LoginComponent } from './components/user-components/login/login.component';
 import { EntrepriseService } from './service/entrepriseService/entreprise.service';
 import { FreelanceService } from './service/freelanceService/freelance.service';
 import { UserService } from './service/userService/user.service';
@@ -7,8 +9,6 @@ import { MediaService } from './service/eventService/media.service';
 import { AppComponent } from './app.component';
 import { AppheaderComponent } from './components/appheader/appheader.component';
 import { AppfooterComponent } from './components/appfooter/appfooter.component';
-import { LoginComponent } from './components/user/login.component';
-import { RegisterComponent } from './components/user/register.component';
 import { AnnonceComponent } from './components/annonce/annonce.component';
 import { EntrepriseComponent } from './components/entreprise/entreprise.component';
 import { EventComponent } from './components/event/event.component';
@@ -21,6 +21,9 @@ import { NgModule } from '@angular/core';
 import { routes } from './app.router';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { MediaComponent } from './components/media/media.component';
+import { EntrepriseAffichComponent } from './components/entreprise-affich/entreprise-affich.component';
+import { AddComponent } from './components/entreprise-components/add/add.component';
+import { ListComponent } from './components/entreprise-components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +35,12 @@ import { MediaComponent } from './components/media/media.component';
     EventComponent,
     ArticleComponent,
     FreelanceComponent,
+    MediaComponent,
+    EntrepriseAffichComponent,
     LoginComponent,
     RegisterComponent,
-    MediaComponent
+    AddComponent,
+    ListComponent
 
   ],
   imports: [

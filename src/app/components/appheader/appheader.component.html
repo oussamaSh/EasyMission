@@ -1,6 +1,6 @@
 <div class="header-strickyy">
   
-              <div class="row">
+              <div class="row" style="margin-right:0">
                   <div class="col-md-1">
                       <div class="site-logo">
                           <a href=""><img src="assets/images/EMlogo.png" alt="" style="max-width: 52%;" class="img-responsive" /></a>
@@ -29,34 +29,34 @@
                           </div>
                           <div id="navbar" class="navbar-collapse collapse">
                               <ul class="nav navbar-nav scrollto">
-                                  <li><a href="">Home</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ryan <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="">Browse Candidates</a></li>
+                                        <li><a href="">Browse Candidates</a></li>
+                                        <li><a href="resume.html">Submit Resume</a></li>
+                                    </ul>
+                                </li>
+                               
+                                                           
                                   <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rayen <i class="fa fa-angle-down"></i></a>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="manage_application.html">Manage Applications</a></li>
-                                          <li><a href="manage_job.html">Manage jobs</a></li>
-                                          <li><a href="job_listing.html">Job Listing</a></li>
-                                          <li><a href="job.html">Job Page</a></li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entreprise <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                          <li><a routerLink="entreprise-affich">Afficher Entreprise</a></li>
+                                          <li><a routerLink="entreprise">Ajouter Entreprise</a></li>
+                                        
                                       </ul>
                                   </li>
+
                                   <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rhouma <i class="fa fa-angle-down"></i></a>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="employe_detail.html">All events</a></li>
-                                          <li><a href="employe_list.html">My events</a></li>
-                                          <li><a href="post.html">All media</a></li>
-                                          <li><a href="post.html">My media</a></li>
-                                      </ul>
-                                  </li>                                
-                                    <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Balha <i class="fa fa-angle-down"></i></a>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="employe_detail.html">All events</a></li>
-                                          <li><a href="employe_list.html">My events</a></li>
-                                          <li><a href="post.html">All media</a></li>
-                                          <li><a href="post.html">My media</a></li>
-                                      </ul>
-                                  </li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rhouma <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="">Browse Candidates</a></li>
+                                        <li><a href="">Browse Candidates</a></li>
+                                        <li><a href="resume.html">Submit Resume</a></li>
+                                    </ul>
+                                </li>
+
                                   <li class="dropdown">
                                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oussama <i class="fa fa-angle-down"></i></a>
                                       <ul class="dropdown-menu">
@@ -81,7 +81,7 @@
                           </div>
                       </nav>
                   </div>
-                  <div class="col-md-3 text-right">
+                  <div class="col-md-3 text-right" style="margin-left: -3%">
                   <!--    @if (@HttpContext.Current.Session["username"]==null)
                       {-->
                           <a routerLink="login" class="login active">Login</a>
