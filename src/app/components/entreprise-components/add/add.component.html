@@ -1,3 +1,75 @@
-<p>
-  add works!
-</p>
+<div class="page_banner banner employer-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="banner-heading">Ajouter Entreprises</div>
+      </div>
+    </div>
+  </div>
+</div>
+<main id="maincontent">
+                    <section class="resume">
+                        <div class="container">
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="" (ngSubmit)="createEntreprise(f)" #f="ngForm">
+                                    <div class="panel-body">
+                                        <div class="panel-heading">Ajouter Entreprise</div>
+                                        <hr>
+                                       
+                                        <div class="form-group col-md-12 p-r">
+                                            <label>Nom</label>
+                                            <input name="name" #name="ngModel" ngModel id="name" type="text" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-6 p-l">
+                                            <label>Adresse</label>
+                                            <input name="addresse" #addresse="ngModel" ngModel id="addresse" type="text" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-6 p-r">
+                                            <label>Téléphone</label>
+                                            <input name="phone" #phone="ngModel" ngModel id="phone" type="text" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-6 p-l">
+                                            <label>Site Web</label>
+                                            <input name="webSite" #webSite="ngModel" ngModel id="webSite" type="text" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-6 p-r">
+                                            <label>Type</label>
+                                              <select class="form-control" name="type" #type="ngModel" ngModel id="type">
+                                                 <option>--- Choose a Category ---</option>
+                                                 <option>SARL</option>
+                                                 <option>EURL</option>
+                                                 <option>SA</option>
+                                                 <option>SELARL</option>
+                                                 <option>SAS</option>
+                                                 <option>SASU</option>
+                                                 <option>SNC</option>
+                                                 <option>SCP</option>
+                                              </select> 
+                                        </div>
+                                        <div class="form-group col-md-6 p-l">
+                                            <label>Secteur</label>
+                                            <input name="sector" #sector="ngModel" ngModel id="sector" type="text" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-6   p-r">
+                                            <label>Spécialité</label>
+                                            <input name="speciality" #speciality="ngModel" ngModel id="speciality" type="text" class="form-control" />
+                                        </div>
+                                          <div class="form-group col-md-12 p-l">
+                                            <label>Description</label>
+                                            <textarea name="description" #description="ngModel" ngModel id="description" type="text" class="form-control" placeholder=""></textarea>
+                                        </div>
+                                        <div class="borderfull-width"></div>
+                                        <div class="col-md-4 p-l">
+                                          
+                                           <button type="Submit" class="btn btn-default btn-block" value="ajouter" (click)="btnClick();">Ajouter</button>
+                                         
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
