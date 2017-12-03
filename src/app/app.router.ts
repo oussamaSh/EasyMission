@@ -4,15 +4,19 @@ import { LoginComponent } from './components/user-components/login/login.compone
 import { AppComponent } from './app.component';
 import {Routes,RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
-import { EntrepriseComponent } from "./components/entreprise/entreprise.component";
-import { EntrepriseAffichComponent } from './components/entreprise-affich/entreprise-affich.component';
+import { AddComponent } from './components/entreprise-components/add/add.component';
+import { ListComponent } from './components/entreprise-components/list/list.component';
+import { DetailleComponent } from "./components/entreprise-components/detaille/detaille.component";
+import { AddRecruiterComponent } from "./components/entreprise-components/add-recruiter/add-recruiter.component";
 
 export const router: Routes =[
 {path : '',component : LoginComponent},
 {path : 'login',component : LoginComponent},
 {path : 'register',component : RegisterComponent},
-{path : 'entreprise',component : EntrepriseComponent},
-{path : 'entreprise-affich',component : EntrepriseAffichComponent}
+{path : 'add',component : AddComponent},
+{path : 'list',component : ListComponent},
+{path : 'add-recruiter',component : AddRecruiterComponent},
+{path : 'detaille/:id',component :DetailleComponent }
 
 ];
 
