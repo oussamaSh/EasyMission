@@ -1,3 +1,6 @@
+
+import { Entreprise } from "../entrepriseModel/entreprise";
+
 export class User {
     constructor (
         public id? : number ,
@@ -12,6 +15,8 @@ export class User {
         public country? : string ,    
         public picture? : string ,
         public birthdate? : string,
-        
+
+        //public entreprise? : Entreprise
+     
     ){}
 }

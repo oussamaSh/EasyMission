@@ -10,7 +10,8 @@ export class Entreprise {
         public description? : string ,
         public speciality? : string ,
         public path? : string ,    
-        public EntrepriseFounder_id? : number
+        public EntrepriseFounder_id? : number,
+        public dateDeactivation? : Date
 
     ){}
 }

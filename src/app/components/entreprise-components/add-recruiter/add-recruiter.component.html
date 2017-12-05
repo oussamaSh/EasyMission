@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<style type="text/css">
+  .outerpadding {
+    padding: 10% 0%;
+  }
+
+  .boximg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .boximg img {
+    transition: all ease-in 500ms;
+    border: 1px solid #fff;
+  }
+
+  .boximg img:hover {
+    transform: scale(1.3, 1.3);
+    cursor: pointer;
+  }
+
+  .boximg:hover {
+    border: 1px solid #fff;
+  }
+
+  .date {
+    left: 0;
+    position: absolute;
+    top: 15px;
+    padding: 5px;
+    background-color: teal;
+    opacity: 0;
+    transition: all ease-in 300ms;
+  }
+
+  .likebut {
+    background: none repeat scroll 0 0 teal;
+    height: 25px;
+    padding: 7px;
+    position: absolute;
+    right: 5px;
+    top: 130px;
+    width: 25px;
+    opacity: 0.4;
+    transition: all ease-in 300ms;
+  }
+
+
+  .boximg:hover .date {
+    opacity: 1;
+  }
+
+  .boximg:hover .likebut {
+    opacity: 1;
+  }
+</style>
+
+
+
+
+<div class="page_banner banner employer-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="banner-heading">Recruteurs </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br /><br /><br /><br />
+<div class="container outerpadding">
+<div class="row">
+
+
+  <div class="col-lg-3 wow fadeInUp animated" *ngFor="let r of recruiters " data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+    <div class="panel">
+      <div class="panel-heading" style="background-color:teal;color:#fff;height: 32px; "><strong style="margin-left:35%;">{{r.firstname}}</strong></div>
+      <div class="panel-body" style="background-color:#000;color:#fff; box-shadow:0 -12px 13px teal inset;">
+
+        <div class="boximg">
+          <img src="https://scontent.ftun2-1.fna.fbcdn.net/v/t1.0-9/20914438_471775223180143_7627997014719821662_n.jpg?oh=8690e4090347185aa85528710fb43c91&oe=5AD635C0"
+            class="img-responsive">
+          <span class="label label-danger date">{{r.birthdate}}</span>
+         
+        </div>
+
+
+        <br>
+        <p class="pull-left">
+          <button class="btn btn-primary" (click)="recruiter(r)">recruiter</button>
+        </p>
+         <button class="btn btn-success pull-right" >Detail</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+

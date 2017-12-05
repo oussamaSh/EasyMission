@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { AppheaderComponent } from './components/appheader/appheader.component';
 import { AppfooterComponent } from './components/appfooter/appfooter.component';
 import { AnnonceComponent } from './components/annonce/annonce.component';
-import { EntrepriseComponent } from './components/entreprise/entreprise.component';
 import { EventComponent } from './components/event/event.component';
 import { ArticleComponent } from './components/article/article.component';
 import { FreelanceComponent } from './components/freelance/freelance.component';
@@ -23,11 +22,13 @@ import { NgModule } from '@angular/core';
 import { routes } from './app.router';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { MediaComponent } from './components/media/media.component';
-import { EntrepriseAffichComponent } from './components/entreprise-affich/entreprise-affich.component';
+import { FilterPipe } from './filter.pipe';
 import { AddComponent } from './components/entreprise-components/add/add.component';
 import { ListComponent } from './components/entreprise-components/list/list.component';
 import { CandidatesComponent } from './components/user-components/candidates/candidates.component';
 import { ProfileComponent } from './components/user-components/profile/profile.component';
+import { DetailleComponent } from './components/entreprise-components/detaille/detaille.component';
+import { AddRecruiterComponent } from './components/entreprise-components/add-recruiter/add-recruiter.component';
 
 @NgModule({
   declarations: [
@@ -35,20 +36,23 @@ import { ProfileComponent } from './components/user-components/profile/profile.c
     AppheaderComponent,
     AppfooterComponent,
     AnnonceComponent,
-    EntrepriseComponent,
+    
     EventComponent,
     ArticleComponent,
     FreelanceComponent,
     MediaComponent,
-    EntrepriseAffichComponent,
+   
     LoginComponent,
     RegisterComponent,
+    FilterPipe,
     AddComponent,
     ListComponent,
     CandidatesComponent,
     AlertComponent,
-    ProfileComponent
-
+    ProfileComponent,
+    DetailleComponent,
+    AddRecruiterComponent
+   
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,routes
