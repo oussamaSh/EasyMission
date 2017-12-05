@@ -1,0 +1,50 @@
+
+
+<script src="assets/js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+   $( document ).ready(function() {
+    console.log( "document loaded" );
+});
+
+$( window ).on( "load", function() {
+    console.log( "window loaded" );
+});    
+       
+</script>
+
+<div class="page_banner banner employer-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="banner-heading">Browse Candidates</div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    
+<div class="candidates">      
+    
+    <div id="claimRow" *ngFor="let candidate of candidates">          
+        <div *ngIf="!IsUserConnected(candidate.username)">
+                <div class="row" >
+                    <div class="col-md-3 col-sm-3">
+                        <img src="assets/images/Upload/{{candidate.picture}}" alt="CandidatePhoto" class="profile-photo-lg" style="max-width: 100%">
+                    </div>
+                    <div class="col-md-5 col-sm-5">
+                        <h5><a href="#" class="profile-link candidate-name">{{candidate.lastname}} {{candidate.firstname}}</a></h5>
+                        <p>Mail: {{candidate.mail}}</p>
+                        <p class="text-muted">Gender: {{candidate.gender}}</p>
+                    </div>
+                        
+                </div>   
+                <hr> 
+        </div>
+        
+    </div>
+    
+</div>
+
+
+

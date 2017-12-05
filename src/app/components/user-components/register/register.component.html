@@ -1,3 +1,193 @@
-<p>
-  register works!
-</p>
+<div class="page_banner">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <div class="banner-heading">Sign Up</div>
+          </div>
+      </div>
+  </div>
+</div>
+<main id="maincontent" style="padding: 45px 0px;">
+  <div class="container">
+      
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              <div class="page-tab">
+                  <div id="form">
+                      <div id="userform">
+
+                          <div class="tab-pane" id="signup">
+                             
+                              <form name="form" (ngSubmit)="f.form.valid && register(f)" #f="ngForm" novalidate>
+                                   <div>
+                                        <alert></alert>
+                                    </div> 
+                                  <div class="form-group">
+                                      <label>Role</label>
+                                      <select class="form-control" name="role" id="role" #role="ngModel" ngModel required style="height: 40px;">
+                                          <option value="candidate">Candidate</option>
+                                          <option value="recruiter">Recruiter</option>
+                                          <option value="entreprisefounder">Entreprise founder</option>
+                                      </select>
+                                  </div>
+
+
+                                  <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                  <label>Firstname</label>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                  <div class="alert alert-danger err" *ngIf="!firstname.valid">
+                                                                          <span *ngIf="firstname.errors.required">Required!</span>
+                                                                  </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <input id="firstname" name="firstname" #firstname="ngModel" ngModel type="text" class="form-control text-box single-line" required>
+                                                        <div class="search_icon"><span class="ti-user"></span></div>
+                                                       
+                                                    </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="form-group" >
+                                                        <div class="row">
+                                                                <div class="col-md-3">
+                                                                      <label>LastName</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                      <div class="alert alert-danger err" *ngIf="!lastname.valid">
+                                                                              <span *ngIf="lastname.errors.required">Required!</span>
+                                                                      </div>
+                                                                </div>
+                                                            </div>
+                                                      <input  id="lastname" name="lastname" #lastname="ngModel" ngModel type="text" class="form-control text-box single-line" required >
+                                                      <div class="search_icon"><span class="ti-user"></span></div>
+                                                  </div> 
+                                        </div>
+                                    </div>
+                                  
+
+                                  
+
+                                  <div class="form-group" >
+                                        <div class="row">
+                                                <div class="col-md-3">
+                                                    <label> Email </label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="alert alert-danger err" *ngIf="!mail.valid">
+                                                            <span *ngIf="mail.errors.required">required!</span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                     
+                                      <input  id="email" name="mail" #mail="ngModel" ngModel type="email" class="form-control text-box single-line" required />
+                                      <div class="search_icon"><span class="ti-email"></span></div>
+                                      
+                                  </div>
+
+                                  <div class="form-group" >
+                                        <div class="row">
+                                                <div class="col-md-3">
+                                                        <label>Username</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="alert alert-danger err" *ngIf="!username.valid">
+                                                        <span *ngIf="username.errors.required">required!</span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                      
+                                      <input  id="username" name="username" #username="ngModel" ngModel type="text" class="form-control text-box single-line" required>
+                                      <div class="search_icon"><span class="ti-user"></span></div>
+                                      
+                                  </div>
+
+
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                            <div class="form-group" >
+                                                    <div class="row">
+                                                            <div class="col-md-3">
+                                                                    <label>Password</label>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <div class="alert alert-danger err" *ngIf="!password.valid">
+                                                                    <span *ngIf="password.errors.required">required!</span>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                  <input id="password" name="password" #password="ngModel" ngModel type="password" class="form-control text-box single-line" required  />
+                                                  <div class="search_icon"><span class="ti-pin"></span></div>
+                                                 
+                                              </div>
+                                      </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                        <div class="col-md-7">
+                                                                <label>Confirm Password</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="alert alert-danger err" *ngIf="!confirmPassword.valid">
+                                                                <span *ngIf="confirmPassword.errors.required">required!</span>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            <input id="confirmPassword" name="confirmPassword" #confirmPassword="ngModel" ngModel type="password" class="form-control"  required >
+                                            <div class="search_icon"><span class="ti-pin"></span></div>
+                                            </div>
+                                        </div>
+                                  </div>
+                                  
+
+                                  
+
+                                  <div class="form-group" style="margin-top:26px">
+                                      <div class="row">
+                                          <div class="col-md-2">
+                                              <label>Gender</label>
+                                          </div>
+
+                                          <div class="col-md-6">
+                                              <div class="form-check radio-inline">
+                                                  <label class="form-check-label">
+                                                      <input class="form-check-input" type="radio" id="gender" name="gender" #gender="ngModel" ngModel value="male" checked> Male
+                                                  </label>
+                                              </div>
+                                              <div class="form-check radio-inline">
+                                                  <label class="form-check-label">
+                                                      <input class="form-check-input" type="radio" id="gender" name="gender" #gender="ngModel" ngModel value="female"> Female
+                                                  </label>
+                                              </div>
+                                          </div>
+                                      </div>
+
+
+                                  </div>
+
+                                  <div class="form-group" style="margin-top:26px">
+                                      <label>Photo</label>
+                                      <input name="picture" (change)="onChange($event)" id="picture" #picture="ngModel" ngModel type="file" class="form-control browse btn btn-default input-lg" >
+                                      <div class="search_icon"><span class="ti-user"></span></div>
+                                  </div>
+
+                                  <div class="mrgn-30-top">
+                                      <input type="submit" value="Create" class="btn btn-default"/>
+                                  </div>
+                                </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+
+
+

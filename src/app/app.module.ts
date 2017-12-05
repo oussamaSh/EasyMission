@@ -1,3 +1,5 @@
+import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from './service/alert.service';
 import { RegisterComponent } from './components/user-components/register/register.component';
 import { LoginComponent } from './components/user-components/login/login.component';
 import { EntrepriseService } from './service/entrepriseService/entreprise.service';
@@ -24,6 +26,8 @@ import { MediaComponent } from './components/media/media.component';
 import { EntrepriseAffichComponent } from './components/entreprise-affich/entreprise-affich.component';
 import { AddComponent } from './components/entreprise-components/add/add.component';
 import { ListComponent } from './components/entreprise-components/list/list.component';
+import { CandidatesComponent } from './components/user-components/candidates/candidates.component';
+import { ProfileComponent } from './components/user-components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +44,16 @@ import { ListComponent } from './components/entreprise-components/list/list.comp
     LoginComponent,
     RegisterComponent,
     AddComponent,
-    ListComponent
+    ListComponent,
+    CandidatesComponent,
+    AlertComponent,
+    ProfileComponent
 
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,routes
   ],
-  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService,EntrepriseService],
+  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService,EntrepriseService,AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

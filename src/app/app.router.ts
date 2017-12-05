@@ -1,3 +1,5 @@
+import { ProfileComponent } from './components/user-components/profile/profile.component';
+import { CandidatesComponent } from './components/user-components/candidates/candidates.component';
 import { RegisterComponent } from './components/user-components/register/register.component';
 import { LoginComponent } from './components/user-components/login/login.component';
 
@@ -11,6 +13,8 @@ export const router: Routes =[
 {path : '',component : LoginComponent},
 {path : 'login',component : LoginComponent},
 {path : 'register',component : RegisterComponent},
+{path : 'candidates',component : CandidatesComponent},
+{path : 'profile',component : ProfileComponent},
 {path : 'entreprise',component : EntrepriseComponent},
 {path : 'entreprise-affich',component : EntrepriseAffichComponent}
 
