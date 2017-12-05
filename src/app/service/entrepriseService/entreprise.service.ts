@@ -41,10 +41,12 @@ export class EntrepriseService {
         return this.http.get(this.urldetaille+id).map(resp=>resp.json());
       }
 
-      recruiterInENtreprise(ressource){
-          return this.http.put(this.urlaffecter,new RequestOptions({
-            body:ressource
-          }))
+      recruiterInENtreprise(user){
+          return this.http.put(this.urlaffecter, user).map(resp => resp.json());
+      }
+
+       getRecruiterByEntreprise(e){
+          return this.http.post(this.urlaffecter, e).map(resp => resp.json());
       }
 
    
