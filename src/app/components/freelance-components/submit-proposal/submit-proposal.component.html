@@ -1,0 +1,8 @@
+<form (ngSubmit)="addProposal(formSubmitProposal)" [formGroup]="formSubmitProposal">
+  <label for="coverLetter">cover letter</label>
+  <input type="text" formControlName="coverLetter" id="coverLetter">
+  <label for="freelancerBudget">budget</label>
+  <input type="text" formControlName="freelancerBudget" id="freelancerBudget">
+  <input type="text"  value="">
+  <button type="Submit" class="btn btn-default" >Submit Proposal</button>
+</form>

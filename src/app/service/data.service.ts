@@ -5,12 +5,11 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataService {
 
-  constructor(private url:string,private http:Http) { }
+  constructor(private url:string,public http:Http) { }
   getAll(){
     return this.http.get(this.url).map(resp=>resp.json());
   }
   create(ressource){
-  
    return this.http.post(this.url, JSON.stringify(ressource)).map(resp=>resp.json());
   }
   update(ressource){

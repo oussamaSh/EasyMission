@@ -1,0 +1,153 @@
+<div class="page_banner post-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="work-time">Full Time</div>
+                <div class="banner-heading">{{freelanceJob?.title}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main id="maincontent">
+    <section class="resume">
+        <div class="container">
+            Back to Jobs List
+
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="panel-body">
+
+                        <div class="col-md-9">
+                            <div class="job_title">
+                                {{freelanceJob?.title}}
+                                <a href="#">{{freelanceJob?.category}}</a>
+                            </div>
+                            <div class="col-md-4 p-l">
+                                <div class="packege">
+                                    <i class="fa fa-briefcase"></i>{{freelanceJob?.projectLength}}
+                                </div>
+                            </div>
+                            <div class="col-md-4 p-l">
+                                <div class="packege">
+                                    <i class="fa fa-usd"></i>
+                                    {{freelanceJob?.salary}}
+                                </div>
+                            </div>
+                            <div class="col-md-4 p-l">
+                                <div class="packege">
+                                    <i class="fa fa-clock-o"></i>
+                                    {{freelanceJob?.date}}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="page-heading"></div>
+                        <div class="page-heading">
+                            <h4>Job Description</h4>
+                            <P>{{freelanceJob?.description}}</P>
+                        </div>
+                        <div class="page_details">
+                            <h4>Responsibilities : </h4>
+                            <p>One may need to manage more than one design brief at a time and typical activities include: </p>
+                            <p>- Talking with clients or account managers to discuss the business objectives and requirements
+                                of the job; </p>
+                            <p>- Estimating the time required to complete the work and providing quotes for clients;</p>
+                            <p>- Thinking creatively to produce new ideas and concepts and developing interactive design; </p>
+                        </div>
+                        <div class="page_details">
+                            <h4>Requirements : </h4>
+                            <!--boucle avis-->
+                            <p>avis hnéééé</p>
+                            <!--boucle avis-->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="panel-body">
+                        <a class="btn btn-default btn-block" [routerLink]="['/submitFreelanceProposal', freelanceJob?.id]">Submit a Proposal</a>
+                      
+                        <p></p>
+                        <a href="#" class="table-btn-default col-md-12 text-center">Save Job</a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-3 p-l">
+                            <div class="block">
+                                <img src="assets/images/job-logo.jpg" alt="" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="job_title block1">
+                            About the client
+                            <a href="#">{{freelanceJob?.user?.firstname}} {{freelanceJob?.user?.lastname}}</a>
+                        </div>
+                        <a href="https://www.facebook.com/" target="blank" class="user-media">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="blank" class="user-media twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="http://www.linkedin.com/" target="blank" class="user-media linke">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="https://mail.google.com/" target="blank" class="user-media google">
+                            <span class="ti-google"></span>
+                        </a>
+                        <div class="clearfix"></div>
+                        <div class="contact_details">
+                            <span>
+                                <i class="fa fa-map"></i> Tunis, {{freelanceJob?.user?.country}} </span>
+                            <span>
+                                <i class="fa fa-phone"></i>{{freelanceJob?.user?.phone}}</span>
+                            <span>
+                                <i class="fa fa-envelope"></i>
+                                <a href="#">{{freelanceJob?.user?.mail}}</a>
+                            </span>
+                            <span>
+                                <i class="fa fa-globe"></i>
+                                <a href="#">http://www.iftechnologies.com</a>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <p>Share On :</p>
+                    <div class="social_button col-md-4 text-center p-l">
+                        <a href="https://www.facebook.com/" class="facebook btn-block" target="blank">
+                            <i class="fa fa-facebook"></i> Login with Faceboook</a>
+                    </div>
+                    <div class="social_button col-md-4  p-l p-r text-center">
+                        <a href="https://twitter.com/" class="facebook twitter  btn-block" target="blank">
+                            <i class="fa fa-twitter"></i> Login with Faceboook</a>
+                    </div>
+                    <div class="social_button col-md-4 text-center p-r">
+                        <a href="https://mail.google.com/" class="facebook google  btn-block" target="blank">
+                            <i class="fa fa-google-plus"></i> Login with Faceboook</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="page-heading">
+                        <h2>Client's Work History and Feedback</h2>
+                    </div>
+                    <!-- @if (@ViewBag.result.user.id != (int)Session["id"])
+                        {
+                            @Html.Partial("AddReview", Model.Item1)
+                        }
+                      
+                        @Html.Partial("DisplayReviewsByUserId", Model.Item2)
+                      -->
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+</main>
+
+<router-outlet></router-outlet>
