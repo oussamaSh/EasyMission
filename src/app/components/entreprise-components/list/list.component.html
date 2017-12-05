@@ -1,4 +1,6 @@
 <link href="/src/assets/css/entrepriseCss.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 <style>
   .butt {
     background-color: #017583;
@@ -90,14 +92,51 @@
               </div>
               <div class="col-md-6" style="margin-top: 26px">
 
-                <button class="btn btn-default butt" (click)="deleteEntreprise(post)">Supprimer</button>
-                <a class="btn btn-default butt" [routerLink]="['/detaille', post.id]">Detaille</a>
+                <button class="btn btn-default butt" data-toggle="modal" data-target="#myModal" >Supprimer</button>
+                <a class="btn btn-default butt" [routerLink]="['/detaille', post.id]">Details</a>
               </div>
             </div>
           </div>
         </div>
+
+
+        <div class="container">
+  
+
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="height: 230px;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="margin-left:35%">Supprimer <b style="color:#017583">{{ post.name}}</b></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <strong style="color:red">Vous êtes sur le point de supprimer cette entreprise, cette procédure est irréversible.</strong>
+           <strong>Voulez-vous poursuivre?</strong>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteEntreprise(post)">Supprimer</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
       </div>
     </div>
   </div>
 </div>
+
 

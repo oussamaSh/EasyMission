@@ -1,0 +1,185 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<style>
+    .res{
+
+        font-size:18px;
+        font-weight:bold;
+    }
+
+     .butt{
+    background-color: #017583;
+    padding: 12px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    line-height: 2px;
+    float:left;
+   
+
+    }
+
+     
+.banner{
+    width: 100%;
+    max-width: 100%;
+
+}
+
+.ban{
+    
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+
+}
+
+.ban img{
+
+    width: 100%;
+    max-width: 100%;
+
+}
+
+
+.cc{
+   padding:0;
+
+}
+
+.inner-banner{
+
+    position: absolute;
+    top:50%;
+    width: 100%;
+    text-align: center;
+}
+
+.inner-banner h1{
+
+color: #ffffff;
+text-shadow: 1px 1px 20px #000000;
+
+}
+
+#aboutt{
+
+    text-align: center;
+    padding-top: 10%;
+}
+
+.aboutt article h2{
+
+   text-align: center;
+
+
+}
+
+.aboutt article{
+
+    margin-top: 10%;
+    margin-bottom:  10%;
+}
+.separator{
+
+    height: 3px;
+    width: 5%;
+    border:none;
+    box-shadow: none;
+    background-color: #FFA500;
+    margin-left: 558px;
+}
+
+  t{
+    color: #7d7d7d;
+    font-size: 15px;
+    line-height: 26px;
+    }
+
+   .butt:hover{
+        text-decoration: none;
+        background-color: #017583;
+        color: #fff;
+    }
+   te{
+       color:red;
+   }
+   .buttt{
+       background-color: #017583;
+    padding: 12px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    line-height: 2px;
+    float:left;
+    margin-left:0px;
+
+   }
+
+
+ 
+</style>
+
+<section class="cc">
+    <div class="ban">
+        <img src="assets/images/home/blog2.jpg" alt="p6" title="p6" class="img-responsive" />
+        <div class="inner-banner">
+            <h1 class="wow fadeInUp animated animated"
+			data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                {{entreprise?.name}}
+            </h1>
+           
+        </div>
+    </div>
+
+</section>
+
+
+<section class="container-fluid aboutt">
+    <div class="container">
+        <div class="row">
+            
+                <h2 class="title wow fadeInDown animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInDown;margin-left: 44%;" id="about">Plus d'info</h2>
+                <hr class="separator">
+           
+            <article class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" ><p style="margin-left:37%">les informations de  {{entreprise?.name}}</p></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label>Adresse : </label><span>  {{entreprise?.addresse}}</span><br />
+                                <label>Type : </label><span>  {{entreprise?.type}}</span><br />
+                                <label>Secteur : </label><span>  {{entreprise?.sector}}</span><br />
+                                <label>Site Web : </label><span>  {{entreprise?.webSite}}</span><br />
+                            </div>
+
+                            <div class="col-md-5">
+                                <label>Téléphone : </label><span>  {{entreprise?.phone}}</span><br />
+                                <label>Spécialité : </label><span>  {{entreprise?.speciality}}</span><br />
+                                <label>Description : </label><span>  {{entreprise?.description}}</span><br />
+                                
+
+
+                            </div>
+                         <div class="col-md-1"> 
+                              <a href="#" class="btn btn-default butt" >Annoces</a> </div>
+                      
+                        </div>
+                         
+                    </div>
+                </div>
+
+          </article>
+        </div>
+    </div>
+</section>
+
+
+  
+

@@ -1,0 +1,230 @@
+
+/*==================================================
+  Common
+  ==================================================*/
+
+
+
+#page-contents{
+  padding: 30px 0 50px;
+}
+
+
+
+
+
+/*==================================================
+  Header
+  ==================================================*/
+
+
+
+/*==================================================
+  Create Post Box CSS
+  ==================================================*/
+
+.create-post{
+  width: 100%;
+  min-height: 90px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1f2f2;
+}
+
+.create-post .form-group{
+  margin-bottom: 0;
+  display: inline-flex;
+}
+
+.create-post .form-group img.profile-photo-md{
+  margin-right: 10px;
+}
+
+.create-post .tools{
+  padding: 8px 0 10px;
+}
+
+.create-post .tools ul.publishing-tools{
+  display: inline-block;
+  text-align:left;
+  margin: 0;
+  padding:5px 0;
+}
+
+.create-post .tools ul.publishing-tools li a{
+  color: #6d6e71;
+  font-size: 18px;
+}
+
+.create-post .tools ul.publishing-tools li a:hover{
+  color: #27aae1;
+}
+
+
+/*==================================================
+  Post Contents CSS
+  ==================================================*/
+
+.post-content{
+  background: #f8f8f8;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid #f1f2f2;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-content img.post-image, video.post-video, .google-maps{
+  width: 100%;
+  height: auto;
+}
+
+.post-content .google-maps .map{
+  height: 300px;
+}
+
+.post-content .post-container{
+  padding: 20px;
+}
+
+.post-content .post-container .post-detail{
+  margin-left: 65px;
+  position: relative;
+}
+
+.post-content .post-container .post-detail .post-text{
+  line-height: 24px;
+  margin: 0;
+}
+
+.post-content .post-container .post-detail .reaction{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.post-content .post-container .post-detail .post-comment{
+  display: inline-flex;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.post-content .post-container .post-detail .post-comment img.profile-photo-sm{
+  margin-right: 10px;
+}
+
+.post-content .post-container .post-detail .post-comment .form-control{
+  height: 30px;
+  box-shadow: none;
+  margin: 7px 0;
+  min-width: 0;
+}
+
+
+/*==================================================
+  Nearby People CSS
+  ==================================================*/
+
+
+/*==================================================
+ Post Date
+==================================================*/
+
+.timeline .post-content{
+  position: relative;
+  overflow: visible;
+}
+
+.timeline .post-content::before{
+  content: "";
+  position: absolute;
+  background: none;
+  width: 1px;
+  height: 98%;
+  left: -145px;
+  border-left: 2px solid #8dc63f;
+  top: 15px;
+}
+
+.timeline .post-content .post-date{
+  position: absolute;
+  margin-left: -125px;
+}
+
+.timeline .post-content .post-date::before{
+  content: "";
+  background: #8dc63f;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  left: -30px;
+  top: 10px;
+  border: 2px solid #fff;
+}
+
+.timeline .post-content img.post-image{
+  border-radius: 4px 4px 0 0;
+}
+
+
+/*==================================================
+  CSS for width 992px
+  ==================================================*/
+
+@media only screen and (max-width : 992px) {
+
+  section h1.section-title{font-size: 175px; margin-bottom: -40px;}
+  
+  #features .feature-item{margin-bottom: 20px;}
+
+  #features .item{margin-bottom: 20px;}
+
+  .timeline #page-contents{margin-top: 185px !important;}
+}
+
+
+/*==================================================
+  CSS for width 768px
+  ==================================================*/
+
+@media only screen and (max-width : 768px) {
+
+  .menu ul.main-menu li.dropdown ul.dropdown-menu li{background: #282425}
+
+  .sign-up-form{left: 0; right: 0; margin: auto;}
+
+  section h1.section-title{font-size: 90px !important; margin-bottom: 0 !important;}
+  
+  #features .feature-item{margin-bottom: 20px;}
+
+  #site-facts .circle{width: 100%; border-radius: 1000px;}
+
+  .nearby-user{text-align: center;}
+
+  .nearby-user button.btn-primary{float: none !important;}
+
+  .post-content .post-container .post-detail .reaction{position: relative;}
+
+  #footer .footer-wrapper ul{margin-bottom: 20px;}
+
+  .contact-us .col-sm-7{margin-bottom: 20px !important;}
+
+}
+
+
+/*==================================================
+  CSS for width 480px
+  ==================================================*/
+
+@media only screen and (max-width : 480px) {
+
+  .sign-up-form{left: 0; right: 0; margin: auto; width: 90%; overflow: hidden; border-radius: 0 0 4px 4px;}
+
+  #app-download ul.app-btn li button{margin-bottom: 20px;}
+
+  .post-contents .post-container .post-detail .reaction{position: relative;}
+
+}
+
