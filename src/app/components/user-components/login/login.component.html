@@ -2,7 +2,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-12 text-center">
-              <div class="banner-heading">Login / Sign Up</div>
+              <div class="banner-heading">Welcome to EasyMission</div>
           </div>
       </div>
   </div>
@@ -14,21 +14,47 @@
               <div class="page-tab">
                   <div id="form">
                       <div id="userform">
+                            <div>
+                                    <alert></alert>
+                            </div> 
                           <ul class="nav nav-tabs nav-justified" role="tablist">
                               <li class="active border-right"><a href="#login" role="tab" data-toggle="tab" style="font-size: 30px;">Log in</a></li>
                           </ul>
                           <div class="tab-content">
                               <div class="tab-pane fade active in" id="login">
 
-                                  <form id="login" method="post" action="Login">
-                                      <div class="form-group">
-                                          <label> Username </label>
-                                          <input type="text" class="form-control" id="username" name="username" required data-validation-required-message="Please enter your username">
+                                  <form id="login" name="form" (ngSubmit)="f.form.valid && login(f)" #f="ngForm" novalidate>
+                                           
+                                        <div class="form-group">
+                                          <div class="row">
+                                              <div class="col-md-9">
+                                                    <label> Username </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                    <div class="alert alert-danger err" *ngIf="!username.valid">
+                                                            <span *ngIf="username.errors.required">Required!</span>
+                                                    </div>
+                                              </div>
+                                          </div>
+                                         
+                                         
+                                          <input type="text" class="form-control" id="username" name="username" #username="ngModel" ngModel required>
                                           <div class="search_icon"><span class="ti-user"></span></div>
                                       </div>
+
                                       <div class="form-group">
-                                          <label> Password</label>
-                                          <input type="password" class="form-control" id="password" name="password" required data-validation-required-message="Please enter your password">
+                                          <div class="row">
+                                              <div class="col-md-9">
+                                                    <label> Password </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                    <div class="alert alert-danger err" *ngIf="!password.valid">
+                                                            <span *ngIf="password.errors.required">Required!</span>
+                                                    </div>
+                                              </div>
+                                          </div>
+
+                                          <input type="password" class="form-control" id="password" name="password" #password="ngModel" ngModel required >
                                           <div class="search_icon"><span class="ti-pin"></span></div>
                                       </div>
                                       <div class="mrgn-30-top">

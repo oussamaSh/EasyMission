@@ -1,3 +1,4 @@
+import { User } from './../../model/userModel/User';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appheader.component.css']
 })
 export class AppheaderComponent implements OnInit {
-
-  constructor() { }
+  currentUser: User;
+  constructor() { 
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
   ngOnInit() {
   }
+
+  IsUserConnected(){
+    if (localStorage.getItem('currentUser')==null){
+      return false;
+    }return true;
+  } 
+
+
 
 }

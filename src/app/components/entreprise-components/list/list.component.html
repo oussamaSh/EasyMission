@@ -1,3 +1,142 @@
-<p>
-  list works!
-</p>
+<link href="/src/assets/css/entrepriseCss.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<style>
+  .butt {
+    background-color: #017583;
+    padding: 12px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    line-height: 2px;
+  }
+
+  .butt:hover {
+    text-decoration: none;
+    background-color: #017583;
+    color: #fff;
+  }
+
+
+  label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  t {
+    color: #7d7d7d;
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .modal-content {
+    height: 133px;
+  }
+
+  img {
+    width: 100%;
+  }
+  .form-control {
+    height: 35px ; 
+  }
+</style>
+
+<div class="page_banner banner employer-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="banner-heading">Entreprises</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="create-post">
+  <div class="row">
+    <div class="col-md-7 col-sm-7">
+      <div class="form-group">
+
+        <form style="margin-top: 22px" id="filter" #f="ngForm">
+        
+         <input type="text" [(ngModel)]="term" name="firstField"  class="form-control" placeholder="Chercher Entreprise" style="width: 250px;margin-left: 72%;">
+        </form>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="page-contents">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-7">
+      <div class="create-post">
+        <div class="row">
+
+        </div>
+      </div>
+      <div style="margin-top: 20px" class="post-content" *ngFor="let post of entreprises | filter:term">
+        <img src="assets/images/home/blog2.jpg" alt="" class="img-responsive">
+        <div class="post-container">
+          <div class="post-detail">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Nom: </label>
+                <span>{{post.name}} </span><br />
+                <label>Address: </label>
+                <span> {{post.addresse}}</span><br />
+               
+              </div>
+              <div class="col-md-6" style="margin-top: 26px">
+
+                <button class="btn btn-default butt" data-toggle="modal" data-target="#myModal" >Supprimer</button>
+                <a class="btn btn-default butt" [routerLink]="['/detaille', post.id]">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container">
+  
+
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="height: 230px;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="margin-left:35%">Supprimer <b style="color:#017583">{{ post.name}}</b></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <strong style="color:red">Vous êtes sur le point de supprimer cette entreprise, cette procédure est irréversible.</strong>
+           <strong>Voulez-vous poursuivre?</strong>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteEntreprise(post)">Supprimer</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

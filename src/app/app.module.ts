@@ -1,4 +1,7 @@
+
 import { FreelanceProposalService } from './service/freelanceService/freelance-proposal.service';
+import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from './service/alert.service';
 import { RegisterComponent } from './components/user-components/register/register.component';
 import { LoginComponent } from './components/user-components/login/login.component';
 import { EntrepriseService } from './service/entrepriseService/entreprise.service';
@@ -11,7 +14,6 @@ import { AppComponent } from './app.component';
 import { AppheaderComponent } from './components/appheader/appheader.component';
 import { AppfooterComponent } from './components/appfooter/appfooter.component';
 import { AnnonceComponent } from './components/annonce/annonce.component';
-import { EntrepriseComponent } from './components/entreprise/entreprise.component';
 import { EventComponent } from './components/event/event.component';
 import { ArticleComponent } from './components/article/article.component';
 
@@ -22,9 +24,10 @@ import { NgModule } from '@angular/core';
 import { routes } from './app.router';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { MediaComponent } from './components/media/media.component';
-import { EntrepriseAffichComponent } from './components/entreprise-affich/entreprise-affich.component';
+import { FilterPipe } from './filter.pipe';
 import { AddComponent } from './components/entreprise-components/add/add.component';
 import { ListComponent } from './components/entreprise-components/list/list.component';
+
 import { FreelanceComponentsComponent } from './components/freelance-components/freelance-components.component';
 import { DisplayFreelanceJobsComponent } from './components/freelance-components/display-freelance-jobs/display-freelance-jobs.component';
 import { FreelancejobDetailsComponent } from './components/freelance-components/freelancejob-details/freelancejob-details.component';
@@ -37,22 +40,30 @@ import { SubmitProposalComponent } from './components/freelance-components/submi
 import { MyProposalsFreelanceComponent } from './components/freelance-components/my-proposals-freelance/my-proposals-freelance.component';
 import { ProposalRequestsComponent } from './components/freelance-components/proposal-requests/proposal-requests.component';
 
+import { CandidatesComponent } from './components/user-components/candidates/candidates.component';
+import { ProfileComponent } from './components/user-components/profile/profile.component';
+import { DetailleComponent } from './components/entreprise-components/detaille/detaille.component';
+import { AddRecruiterComponent } from './components/entreprise-components/add-recruiter/add-recruiter.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AppheaderComponent,
     AppfooterComponent,
     AnnonceComponent,
-    EntrepriseComponent,
+    
     EventComponent,
     ArticleComponent,
     
     MediaComponent,
-    EntrepriseAffichComponent,
+   
     LoginComponent,
     RegisterComponent,
+    FilterPipe,
     AddComponent,
     ListComponent,
+
     FreelanceComponentsComponent,
     DisplayFreelanceJobsComponent,
     FreelancejobDetailsComponent,
@@ -63,13 +74,22 @@ import { ProposalRequestsComponent } from './components/freelance-components/pro
     FieldErrorDisplayComponent,
     SubmitProposalComponent,
     MyProposalsFreelanceComponent,
-    ProposalRequestsComponent
+    ProposalRequestsComponent,
+    CandidatesComponent,
+    AlertComponent,
+    ProfileComponent,
+    DetailleComponent,
+    AddRecruiterComponent
+   
 
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,routes
   ],
-  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService,EntrepriseService,FreelanceProposalService],
+
+
+  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService,EntrepriseService,AlertService,FreelanceProposalService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
