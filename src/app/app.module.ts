@@ -44,7 +44,9 @@ import { CandidatesComponent } from './components/user-components/candidates/can
 import { ProfileComponent } from './components/user-components/profile/profile.component';
 import { DetailleComponent } from './components/entreprise-components/detaille/detaille.component';
 import { AddRecruiterComponent } from './components/entreprise-components/add-recruiter/add-recruiter.component';
-
+import { NgxClickToEditModule } from 'ngx-click-to-edit';
+import { Component } from '@angular/core';
+//import { TwitterService } from 'ng2-twitter';
 
 @NgModule({
   declarations: [
@@ -84,11 +86,12 @@ import { AddRecruiterComponent } from './components/entreprise-components/add-re
 
   ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,routes
+    BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,routes, NgxClickToEditModule.forRoot()
   ],
 
 
-  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService,EntrepriseService,AlertService,FreelanceProposalService],
+  providers: [MediaService,EventService,PlaceService,UserService,FreelanceService,EntrepriseService,
+    AlertService,FreelanceProposalService],
 
   bootstrap: [AppComponent]
 })

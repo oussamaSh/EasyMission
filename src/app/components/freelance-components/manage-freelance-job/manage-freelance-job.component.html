@@ -1,3 +1,4 @@
+
 <div class="page_banner banner employer-banner">
     <div class="container">
         <div class="row">
@@ -29,7 +30,10 @@
                 <div class="col-md-9">
                     <div class="panel-body">
                         <div class="job_title">Manage Posted Jobs</div>
-                        <table class="table">
+                        <div *ngIf="freelanceJobs==undefined">
+                            <h1>You haven't posted any job yet !</h1>
+                        </div>
+                        <table *ngIf="freelanceJobs!=null" class="table">
                             <thead class="">
                                 <tr>
                                     <th>Job Title</th>
@@ -45,8 +49,10 @@
                                     <td >{{freelancejob.date}}</td>
                                     <td><strong><span class="text-success">{{freelancejob?.isOpen}}</span></strong></td>
                                     <td><span style="color:rgb(22, 22, 87)"><i class="fa fa-pencil"></i><a href="">Edit</a></span> <span style="color:red"><i class="fa fa-trash"></i><a role="button" (click)="deleteFreelanceJob(freelancejob)">Delete</a></span></td>
+                              
+                                         
                                 </tr>
-
+                              
                                
                             </tbody>
                         </table>
@@ -55,23 +61,6 @@
             </div>
         </div>
     </section>
+ 
 </main>
 
-
-<!--<modal #deleteUserModal id="deleteUser"
-[show-modal]="isModalOpen"
-[title]="'Delete'"
->
-<div class="popup-content">
- <p>Are you sure you want to delete the user permanently?</p>
-</div>
-<div class="popup-footer">
- <button class="btn cancel"  aria-label="Close" (click)="deleteUserModal.hide()">
-     Cancel
- </button>
- <button type="button" class="btn btn-primary" (click)="deleteSelectedUser(deleteUserModal)" aria-label="Close">
-     Delete
- </button>
-</div>
-</modal>
--->

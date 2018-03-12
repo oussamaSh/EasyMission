@@ -1,3 +1,5 @@
+import  swal  from 'sweetalert2';
+import { AlertService } from './../../../service/alert.service';
 import { FreelanceJob } from './../../../model/freelanceModel/FreelanceJob';
 import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { FreelanceService } from './../../../service/freelanceService/freelance.service';
@@ -14,21 +16,12 @@ export class AddFreelancejobComponent implements OnInit {
   //form: FormGroup;
   
   
-  constructor(private service:FreelanceService,private router: Router,private formBuilder: FormBuilder) { }
+  constructor(private service:FreelanceService,
+              private router: Router,
+              private formBuilder: FormBuilder,
+              private alertService: AlertService) { }
 
   ngOnInit() {
-    /*this.formAddJob = this.formBuilder.group({
-      title: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      address: this.formBuilder.group({
-        street: [null, Validators.required],
-        street2: [null],
-        zipCode: [null, Validators.required],
-        city: [null, Validators.required],
-        state: [null, Validators.required],
-        country: [null, Validators.required]
-      })
-    });*/
   }
 
   formAddJob = new FormGroup({
@@ -61,12 +54,23 @@ export class AddFreelancejobComponent implements OnInit {
        
        this.service.createJob(freelanceJob).subscribe(createdJob=>{
     
-        freelanceJob.id=createdJob.id;
-       /* console.log(freelanceJob);
-        this.freelanceJob.splice(0,1,entreprise);
-        console.log(this.entreprises);*/
-       })
-       this.router.navigate(['/myPostedJobs']);
+        swal(
+          'Good job!',
+          'FreelanceJob added successfully',
+          'success'
+        )
+       },
+       error => {
+        this.alertService.error(error.text());
+        swal(
+          'Oops...',
+          error.text(),
+          'error'
+        )
+           console.log(error);
+      
+    })
+     //this.router.navigate(['/myPostedJobs']);
     
       }
 

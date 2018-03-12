@@ -20,6 +20,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
+                    <div id="alert">
+                            <alert></alert>
+                    </div>
+                        
                     <form  (ngSubmit)="addFreelanceJob(formAddJob)" [formGroup]="formAddJob">
                     <div class="panel-body">
                         <div class="panel-heading">Job Details</div>
@@ -140,9 +144,9 @@
 
                      
                         <div class="col-md-12 p-l">
-                           
+                           <a href="#alert" >
                             <button type="Submit" class="btn btn-default" [disabled]="!formAddJob.valid">Post Job</button>
-                                                        
+                        </a>                      
                         </div>
                     </div>
                   </form>

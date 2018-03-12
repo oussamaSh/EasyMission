@@ -24,19 +24,33 @@ export class FreelanceProposalService extends DataService {
     /*  const body = JSON.stringify(proposal.freelanceJob.id=idd);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });*/
-      return this.http.post(this.URLSubmitProposal, proposal).map(resp=>resp.json());
+      return this.http.post(this.URLSubmitProposal, proposal,this.jwt()).map(resp=>resp.json());
      }
 
      getMyProposals(){
-      return this.http.get(this.URLMyProposals).map(resp=>resp.json());
+      return this.http.get(this.URLMyProposals,this.jwt()).map(resp=>resp.json());
      }
 
      getProposalRequests(){
-      return this.http.get(this.URLProposalRequests).map(resp=>resp.json());
+      return this.http.get(this.URLProposalRequests,this.jwt()).map(resp=>resp.json());
      }
 
      acceptProposal(proposal:FreelanceProposal){
-      return this.http.patch(this.URLProposalRequests,proposal, proposal.state="accepted").map(resp=>resp.json());
+      proposal.state="accepted";
+      return this.http.put(this.URLAcceptDeclineProposal,proposal,this.jwt());
      }
+
+     declineProposal(proposal:FreelanceProposal){
+      return this.http.put(this.URLAcceptDeclineProposal,proposal, proposal.state="declined");
+     }
+
+     private jwt() {
+      // create authorization header with jwt token
+      let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser && currentUser.token) {
+          let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+          return new RequestOptions({ headers:headers });
+      }
+  }
 
 }

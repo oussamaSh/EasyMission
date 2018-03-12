@@ -1,6 +1,7 @@
 import { FreelanceProposal } from './../../../model/freelanceModel/FreelanceProposal';
 import { FreelanceProposalService } from './../../../service/freelanceService/freelance-proposal.service';
 import { Component, OnInit } from '@angular/core';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-proposal-requests',
@@ -15,12 +16,16 @@ export class ProposalRequestsComponent implements OnInit {
   constructor( private service:FreelanceProposalService) { }
 
   ngOnInit() {
-
-    this.service.getMyProposals().subscribe(freelanceProposals=>this.freelanceProposals=freelanceProposals);
+   
+    this.service.getProposalRequests().subscribe(freelanceProposals=>this.freelanceProposals=freelanceProposals);
   }
 
   acceptProposal(proposal){
-    this.service.acceptProposal(proposal).subscribe(freelanceProposal=>this.freelanceProposal=freelanceProposal);
+    this.service.acceptProposal(proposal).subscribe();
+    
+  }
+  declineProposal(proposal){
+    this.service.declineProposal(proposal).subscribe();
     
   }
 }

@@ -21,19 +21,37 @@
 
                         <div class="col-md-9">
                             <div class="job_title">
-                                {{freelanceJob?.title}}
-                                <a href="#">{{freelanceJob?.category}}</a>
+                               
+                                <click-to-edit *ngIf="freelanceJob?.user?.id == currentUser?.id" [value]="freelanceJob?.title" (onSave)="updateFreelanceJob(freelanceJob,$event,'title')"></click-to-edit>
+                                <a href="#">
+                                        <click-to-edit *ngIf="freelanceJob?.user?.id == currentUser?.id" [value]="freelanceJob?.category" (onSave)="updateFreelanceJob(freelanceJob,$event,'category')"></click-to-edit>
+                                        
+                                    </a>
+                                    <h3 *ngIf="freelanceJob?.user?.id != currentUser?.id">{{freelanceJob?.title}}</h3>
+                                    <a href="#" *ngIf="freelanceJob?.user?.id != currentUser?.id">
+                                         {{freelanceJob?.category}}                                            
+                                        </a>
                             </div>
                             <div class="col-md-4 p-l">
                                 <div class="packege">
-                                    <i class="fa fa-briefcase"></i>{{freelanceJob?.projectLength}}
+                                  
+                                    <click-to-edit *ngIf="freelanceJob?.user?.id == currentUser?.id" [value]="freelanceJob?.projectLength" (onSave)="updateFreelanceJob(freelanceJob,$event,'projectLength')"></click-to-edit>
+                                    
+                                    <span *ngIf="freelanceJob?.user?.id != currentUser?.id"><i class="fa fa-briefcase"></i>
+                                        {{freelanceJob?.projectLength}}
+                                    </span>
                                 </div>
                             </div>
-                            <div class="col-md-4 p-l">
-                                <div class="packege">
-                                    <i class="fa fa-usd"></i>
-                                    {{freelanceJob?.salary}}
+           
+                            <div class="col-md-4 p-l" >
+                                <div class="packege" *ngIf="freelanceJob?.user?.id == currentUser?.id">
+                                    <click-to-edit [value]="freelanceJob?.salary" (onSave)="updateFreelanceJob(freelanceJob,$event,'salary')"></click-to-edit> 
                                 </div>
+                                <div class="packege" *ngIf="freelanceJob?.user?.id != currentUser?.id">   
+                                        <i class="fa fa-usd"></i>
+                                        {{freelanceJob?.salary}}                                            
+                                </div>
+                              
                             </div>
                             <div class="col-md-4 p-l">
                                 <div class="packege">
@@ -47,7 +65,12 @@
                         <div class="page-heading"></div>
                         <div class="page-heading">
                             <h4>Job Description</h4>
-                            <P>{{freelanceJob?.description}}</P>
+                            <P *ngIf="freelanceJob?.user?.id == currentUser?.id">
+                            <click-to-edit [value]="freelanceJob?.description" (onSave)="updateFreelanceJob(freelanceJob,$event,'description')"></click-to-edit>
+                            </P>
+                            <P *ngIf="freelanceJob?.user?.id != currentUser?.id">
+                                {{freelanceJob?.description}}
+                           </P>
                         </div>
                         <div class="page_details">
                             <h4>Responsibilities : </h4>
@@ -59,9 +82,7 @@
                         </div>
                         <div class="page_details">
                             <h4>Requirements : </h4>
-                            <!--boucle avis-->
-                            <p>avis hnéééé</p>
-                            <!--boucle avis-->
+                            
                         </div>
 
                     </div>
@@ -69,7 +90,7 @@
                 <div class="col-md-4">
 
                     <div class="panel-body">
-                        <a class="btn btn-default btn-block" [routerLink]="['/submitFreelanceProposal', freelanceJob?.id]">Submit a Proposal</a>
+                        <a role="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#modalSubmitProposal" >Submit a Proposal</a>
                       
                         <p></p>
                         <a href="#" class="table-btn-default col-md-12 text-center">Save Job</a>
@@ -89,7 +110,9 @@
                         </a>
                         <a href="https://twitter.com/" target="blank" class="user-media twitter">
                             <i class="fa fa-twitter"></i>
+                            
                         </a>
+                        
                         <a href="http://www.linkedin.com/" target="blank" class="user-media linke">
                             <i class="fa fa-linkedin"></i>
                         </a>
@@ -149,5 +172,79 @@
     </section>
 
 </main>
+
+<div class="modal fade" id="modalSubmitProposal">
+        <div class="modal-dialog">
+          <div class="modal-content" style="height: 600px;">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" style="margin-left:35%">Submit proposal </h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                 
+                          <form (ngSubmit)="addProposal(formSubmitProposal)" [formGroup]="formSubmitProposal">
+                                <div class="panel-body">
+                                    <div class="panel-heading">Proposal Details</div>
+                                    <hr>
+                                    
+                                    <div class="form-group col-md-12 p-l" [ngClass]="displayFieldCss('freelancerBudget')">
+                                        <label  for="freelancerBudget" class="control-label required">Your Budget</label>
+                                        <input formControlName="freelancerBudget" id="freelancerBudget" type="text" class="form-control" />
+                                        <!--<app-field-error-display 
+                                        [displayError]="isFieldValid('title')" 
+                                        *ngIf="title?.errors?.required"
+                                         errorMsg="This field is required">
+                                      </app-field-error-display>
+                                      <app-field-error-display 
+                                      [displayError]="isFieldValid('title')" 
+                                      *ngIf="title?.errors?.minlength"
+                                      errorMsg="min Length should be {{title?.errors?.minlength?.requiredLength}} " >
+                                    </app-field-error-display>-->
+                                    </div>
+                                    
+                               
+                               
+                                  
+                                    <div class="form-group col-md-12 p-l p-r" [ngClass]="displayFieldCss('coverLetter')">
+                                        <label for="coverLetter" class="control-label required">Cover Letter</label>
+                                        <textarea formControlName="coverLetter" id="coverLetter" type="text" class="form-control" placeholder="Write description here..."></textarea>
+                                        <!--<app-field-error-display 
+                                        [displayError]="isFieldValid('description')" 
+                                        *ngIf="description?.errors?.required"
+                                        errorMsg="This field is required" >
+                                      </app-field-error-display>
+                                        <app-field-error-display 
+                                        [displayError]="isFieldValid('description')" 
+                                        *ngIf="description?.errors?.minlength"
+                                        errorMsg="Minimum length should be {{description?.errors?.minlength?.requiredLength}} " >
+                                      </app-field-error-display>-->
+                                      
+                                    </div>
+                                  
+                                 
+            
+                                 
+                                    <div class="col-md-12 p-l">
+                                       
+                                        <button type="Submit"  class="btn btn-default" [disabled]="!formSubmitProposal.valid">Submit Proposal</button>
+                                                                    
+                                    </div>
+                                </div>
+                              </form>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                   
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
 
 <router-outlet></router-outlet>

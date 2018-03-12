@@ -25,7 +25,10 @@
                   <div class="col-md-9">
                       <div class="panel-body">
                           <div class="job_title">Manage Proposals</div>
-                          <table class="table">
+                          <div *ngIf="freelanceProposals==''">
+                                <h2>You haven't applied in any freelance job yet !!</h2>
+                            </div>
+                          <table *ngIf="freelanceProposals!=''" class="table">
                               <thead class="">
                                   <tr>
                                       <th>Client Name</th>
@@ -49,8 +52,11 @@
                                           </td>
                                           <td style="vertical-align: text-top;"><h1>{{proposal.freelanceJob.title}}</h1></td>
                                           <td style="vertical-align: text-top;">{{proposal.coverLetter}}</td>
-                                          <td style="vertical-align: text-top;"><span style="color:forestgreen"><i class="fa fa-check"></i>Accepted</span></td>
-                                          <td style="vertical-align: text-top;"><a class="btn">Show Details</a></td>
+                                          <td style="vertical-align: text-top;"><span *ngIf="proposal.state=='ongoing'" style="color:forestgreen"><i class="fa fa-spinner" aria-hidden="true"></i>
+                                            Waiting for response</span>
+                                            <span *ngIf="proposal.state=='accepted'" style="color:forestgreen"><i class="fa fa-check"></i>Accepted</span>
+                                            <span *ngIf="proposal.state=='declined'" style="color:red"><i class="fa fa-trash"></i>Declined</span></td>
+                                          <td style="vertical-align: text-top;">{{proposal.details}}<a class="btn">Show Details</a></td>
                                           
                                         </tr>
                               </tbody>
